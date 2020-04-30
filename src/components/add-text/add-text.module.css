@@ -1,0 +1,22 @@
+.input {
+  font-size: 3em;
+  background-color: var(--colour-white);
+  border: 0.1em solid var(--colour-full-grey);
+  color: var(--colour-black);
+  padding: 0.3em 0.6em 0.4em 0.6em;
+  border-radius: 0.2em;
+}
+
+.input::placeholder {
+  color: var(--colour-full-grey);
+}
+
+.input:focus {
+  outline: none;
+}
+
+.form {
+  background-color: var(--colour-light-grey);
+  padding: 2em;
+  display: grid;
+}

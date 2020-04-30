@@ -1,3 +1,4 @@
 import { createContext } from 'react';
-const TextContext = createContext(["Lorem ipsum"], () => {});
+const TextContext = createContext("");
 export default TextContext;
+

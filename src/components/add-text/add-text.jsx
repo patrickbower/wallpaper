@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import TextContext from "../../context/TextContext";
 import Styles from "./add-text.module.css";
 
 const settings = {
@@ -6,15 +7,11 @@ const settings = {
 };
 
 const AddText = () => {
-  // const [getText, setText] = useState("");
+  const [textContext, setTextContext] = useContext(TextContext);
   let [errors, setErrors] = useState({});
 
   const handleChange = (event) => {
     const { value, name } = event.target;
-    // let newErrors;
-
-    console.log(value.length);
-
     // validation
     switch (name) {
       case "text":
@@ -25,12 +22,14 @@ const AddText = () => {
       default:
         break;
     }
-    setErrors({ errors, [name]: value });
+    setErrors({ errors });
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(errors);
+    // console.info(errors);
+    // console.log(event.target.text.value);
+    setTextContext(event.target.text.value);
   };
 
   return (
@@ -40,8 +39,9 @@ const AddText = () => {
         name="text"
         onChange={handleChange}
         className={Styles.input}
-        placeholder="Thought for the day"
+        placeholder={textContext}
         noValidate
+        autoFocus
       />
       <button type="submit" className="sr-only">
         Submit

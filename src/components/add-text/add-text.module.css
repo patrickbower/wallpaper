@@ -1,3 +1,11 @@
+.form {
+  /* background-color: var(--colour-light-grey); */
+  /* padding: 2em; */
+  display: grid;
+  width: 100vw;
+  position: absolute;
+}
+
 .input {
   font-size: 3em;
   background-color: var(--colour-white);
@@ -5,6 +13,7 @@
   color: var(--colour-black);
   padding: 0.3em 0.6em 0.4em 0.6em;
   border-radius: 0.2em;
+  margin: 1em;
 }
 
 .input::placeholder {
@@ -13,10 +22,4 @@
 
 .input:focus {
   outline: none;
-}
-
-.form {
-  background-color: var(--colour-light-grey);
-  padding: 2em;
-  display: grid;
 }
